@@ -1,0 +1,14 @@
+{
+  "name": "necutmoa-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Necutmoa landing page with launch notification lead capture.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check app.js && node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

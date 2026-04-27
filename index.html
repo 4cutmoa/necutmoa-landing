@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="네컷모아 - 네컷사진을 날짜, 장소, 사람, 메모와 함께 앨범으로 기록하는 추억 보관 앱">
+  <title>네컷모아 | 네컷사진 추억 앨범</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="네컷모아 홈">
+      <span class="brand-mark">ㄴ</span>
+      <span>네컷모아</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="#features">기능</a>
+      <a href="#gallery">앱 화면</a>
+      <a href="#plans">요금제</a>
+      <a href="#data">알림 데이터</a>
+    </nav>
+    <a class="nav-cta" href="#notify">출시 알림</a>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">four-cut memory album</p>
+        <h1><span class="line">네컷사진이</span><span class="line">추억 앨범이 되는 곳.</span></h1>
+        <p class="hero-text">
+          네컷모아는 갤러리에 흩어진 네컷사진을 날짜, 장소, 함께한 사람, 메모와 함께
+          오래 꺼내 보는 개인 앨범으로 정리해주는 앱입니다.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#notify">출시 알림 받기</a>
+          <a class="secondary-button" href="#gallery">앱 화면 보기</a>
+        </div>
+        <div class="hero-notes" aria-label="앱 핵심 기능">
+          <span>날짜별 보관</span>
+          <span>앨범 정리</span>
+          <span>장소 기록</span>
+        </div>
+      </div>
+
+      <div class="hero-stage" aria-label="네컷모아 앱 미리보기">
+        <div class="device-stack">
+          <div class="device-frame hero-device">
+            <img class="app-shot" src="assets/app-album-calendar.gif" alt="네컷모아 앨범 상세와 날짜별 기록 화면이 전환되는 미리보기">
+          </div>
+        </div>
+        <div class="sparkle s1"></div>
+        <div class="sparkle s2"></div>
+        <div class="sparkle s3"></div>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <p class="section-kicker">why necutmoa</p>
+      <h2><span class="line">찍고 끝나는 사진이 아니라,</span><span class="line">다시 펼쳐보는 그날의 기록으로.</span></h2>
+      <div class="intro-grid">
+        <article>
+          <span class="count">01</span>
+          <h3>날짜로 기억해요</h3>
+          <p>빈 날짜를 누르면 그날의 네컷사진이 채워지고, 한 달의 추억이 달력처럼 정리됩니다.</p>
+        </article>
+        <article>
+          <span class="count">02</span>
+          <h3>사진 너머를 남겨요</h3>
+          <p>누구와, 어디서, 어떤 기분이었는지 적어두면 네컷사진은 다시 읽히는 기록이 됩니다.</p>
+        </article>
+        <article>
+          <span class="count">03</span>
+          <h3>앨범으로 모아요</h3>
+          <p>친구, 여행, 나만의 순간처럼 원하는 기준으로 앨범을 만들고 공유할 수 있습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="section-heading">
+        <p class="section-kicker">app screens</p>
+        <h2><span class="line">앱에서 보던 감성을</span><span class="line">그대로</span></h2>
+        <p>앨범 보관, 사진 상세, 날짜별 기록, 장소 지도까지 실제 앱 화면 흐름에 맞춰 보여줍니다.</p>
+      </div>
+      <div class="screen-gallery">
+        <figure>
+          <img class="screen-shot" src="assets/app-albums.png" alt="네컷모아 앨범 저장소 화면" data-fallback="screen">
+          <figcaption>앨범 저장소</figcaption>
+          <p class="screen-caption">내가 만든 앨범을 책장처럼 모아보고 새 앨범을 추가합니다.</p>
+        </figure>
+        <figure>
+          <img class="screen-shot" src="assets/app-photo-detail.png" alt="네컷모아 사진 상세 화면" data-fallback="screen">
+          <figcaption>사진 상세</figcaption>
+          <p class="screen-caption">선택한 네컷사진을 크게 보고 새 추억을 이어서 기록합니다.</p>
+        </figure>
+        <figure>
+          <img class="screen-shot" src="assets/app-album-calendar.gif" alt="네컷모아 앨범 상세와 날짜별 달력 화면이 전환되는 미리보기" data-fallback="screen">
+          <figcaption>앨범 · 날짜 기록</figcaption>
+          <p class="screen-caption">앨범 상세와 날짜별 보관 화면을 오가며 기록 흐름을 보여줍니다.</p>
+        </figure>
+        <figure>
+          <img class="screen-shot map-shot" src="assets/app-map.png" alt="네컷모아 장소 지도 화면" data-fallback="screen">
+          <figcaption>장소 지도</figcaption>
+          <p class="screen-caption">자주 찍은 포토부스와 장소별 추억을 지도에서 확인합니다.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="section features">
+      <div class="section-heading">
+        <p class="section-kicker">features</p>
+        <h2><span class="line">네컷사진에 맞춘</span><span class="line">기록 방식</span></h2>
+      </div>
+
+      <div class="feature-row">
+        <div class="mockup-panel calendar-panel">
+          <div class="feature-device">
+            <img src="assets/app-album-detail.png" alt="네컷모아 앨범 상세 화면">
+          </div>
+        </div>
+        <div class="feature-copy">
+          <span class="feature-number">01</span>
+          <h3>앨범을 넘기듯 꺼내봐요</h3>
+          <p>월별 탭으로 사진을 넘기며 날짜, 장소, 메모를 함께 확인합니다. 한 장의 네컷사진이 앨범 속 기록으로 정리됩니다.</p>
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="mockup-panel scrapbook-panel">
+          <div class="feature-device">
+            <img src="assets/app-subscription.png" alt="네컷모아 달력과 저장소 관리 화면">
+          </div>
+        </div>
+        <div class="feature-copy">
+          <span class="feature-number">02</span>
+          <h3>저장 공간을 관리해요</h3>
+          <p>무료로 시작하고, 더 많이 보관하고 싶을 때 저장소를 확장합니다. 사용량과 업그레이드 상태를 명확하게 보여줍니다.</p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="mockup-panel map-panel">
+          <div class="feature-device map-device">
+            <img class="map-preview" src="assets/app-map.png" alt="네컷모아 장소 지도 화면">
+          </div>
+        </div>
+        <div class="feature-copy">
+          <span class="feature-number">03</span>
+          <h3>장소별 추억을 다시 찾아요</h3>
+          <p>어느 지점에서 몇 번 찍었는지 모아 보여줍니다. 자주 가는 포토부스와 도시별 기억을 자연스럽게 발견할 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="section plans">
+      <div class="section-heading">
+        <p class="section-kicker">premium</p>
+        <h2><span class="line">가볍게 시작하고,</span><span class="line">더 많이 남기고 싶을 때 확장하세요</span></h2>
+      </div>
+      <div class="plan-grid">
+        <article class="plan-card">
+          <h3>무료</h3>
+          <strong>0원</strong>
+          <p>기본 저장과 앨범 기능으로 네컷모아를 시작할 수 있습니다.</p>
+          <ul>
+            <li>사진 20장</li>
+            <li>앨범 2개</li>
+            <li>기본 기록 카드</li>
+          </ul>
+        </article>
+        <article class="plan-card highlighted">
+          <span class="badge">추천</span>
+          <h3>프리미엄</h3>
+          <strong>월 3,900원</strong>
+          <p>사진과 앨범을 제한 없이 남기고 싶은 사용자를 위한 선택입니다.</p>
+          <ul>
+            <li>무제한 사진 저장</li>
+            <li>무제한 앨범</li>
+            <li>고급 공유 링크</li>
+          </ul>
+        </article>
+        <article class="plan-card">
+          <h3>저장소 추가</h3>
+          <strong>옵션</strong>
+          <p>필요한 만큼 사진 보관 공간을 추가해 오래 쌓아둘 수 있습니다.</p>
+          <ul>
+            <li>추가 저장 공간</li>
+            <li>원본 백업</li>
+            <li>앨범 확장</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="data" class="section data-section">
+      <div class="section-heading">
+        <p class="section-kicker">how it works</p>
+        <h2><span class="line">출시 알림을 누르면</span><span class="line">이렇게 저장됩니다</span></h2>
+      </div>
+      <div class="data-grid">
+        <article>
+          <span>1</span>
+          <h3>이메일 입력</h3>
+          <p>방문자가 이메일을 입력하고 알림 받기를 누릅니다.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>서버 저장</h3>
+          <p>로컬 서버 실행 상태에서는 이메일, 등록 시각, 유입 페이지가 `data/leads.json`에 누적됩니다.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>리스트 활용</h3>
+          <p>출시일에 저장된 이메일 리스트를 내려받아 사전 알림, 베타 초대, 초기 혜택 안내에 사용할 수 있습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="notify" class="section notify">
+      <div class="notify-paper">
+        <p class="section-kicker">coming soon</p>
+        <h2><span class="line">첫 네컷부터</span><span class="line">모아둘 준비를 시작하세요.</span></h2>
+        <p>출시 소식과 초기 혜택을 가장 먼저 받아보세요. 입력한 이메일은 출시 알림 리스트에 저장됩니다.</p>
+        <form class="notify-form">
+          <label for="email">이메일</label>
+          <div>
+            <input id="email" name="email" type="email" placeholder="email@email.com" required>
+            <button type="submit">알림 받기</button>
+          </div>
+          <small class="form-message" role="status" aria-live="polite"></small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>네컷모아</span>
+    <p>사진으로 남기는 추억 앨범</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
