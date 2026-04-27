@@ -8,6 +8,15 @@
   --blue-strong: #4f8bd8;
   --paper: #ffffff;
   --lavender: #ece9f6;
+  --button-primary: #91bff0;
+  --button-primary-hover: #d3e4f6;
+  --button-primary-pressed: #60a0e4;
+  --button-secondary: #ffffff;
+  --button-secondary-hover: #f4f4f8;
+  --button-secondary-pressed: #e3e4eb;
+  --button-border: #418ad8;
+  --button-disabled: #e3e4eb;
+  --button-disabled-border: #a8a9b2;
   --shadow: 0 24px 60px rgba(58, 75, 100, 0.18);
   --soft-shadow: 0 16px 30px rgba(41, 55, 76, 0.13);
   --display-font: "Gowun Batang", "Batang", "Times New Roman", serif;
@@ -100,15 +109,22 @@ input {
 .primary-button,
 .secondary-button,
 .notify-form button {
-  border-radius: 14px;
-  font-weight: 750;
+  border-radius: 0;
+  font-family: var(--display-font);
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: background-color 0.14s ease, box-shadow 0.14s ease, transform 0.14s ease;
 }
 
 .nav-cta {
-  padding: 10px 16px;
-  background: #fff;
-  border: 1px solid rgba(190, 199, 214, 0.9);
-  box-shadow: 0 8px 18px rgba(63, 80, 105, 0.08);
+  min-height: 34px;
+  padding: 8px 16px;
+  border: 1px solid var(--button-border);
+  background: var(--button-secondary);
+  box-shadow: 0 2px 0 var(--button-border);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .section {
@@ -190,25 +206,69 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 22px;
+  min-height: 50px;
+  padding: 12px 32px;
   font-size: 16px;
-  line-height: 1;
+  line-height: 24px;
 }
 
 .primary-button,
 .notify-form button {
-  border: 1px solid #5f91d7;
-  background: #77a9e8;
-  color: #fff;
-  box-shadow: 0 10px 20px rgba(76, 124, 190, 0.18);
+  border: 1px solid var(--button-border);
+  background: var(--button-primary);
+  color: var(--ink);
+  box-shadow: 0 2px 0 var(--button-border);
 }
 
 .secondary-button {
-  border: 1px solid #bcc6d4;
-  background: rgba(255,255,255,0.84);
-  color: #1f2633;
-  box-shadow: 0 8px 18px rgba(63, 80, 105, 0.07);
+  border: 1px solid var(--button-border);
+  background: var(--button-secondary);
+  color: var(--ink);
+  box-shadow: 0 2px 0 var(--button-border);
+}
+
+.nav-cta:hover,
+.secondary-button:hover {
+  background: var(--button-secondary-hover);
+}
+
+.primary-button:hover,
+.notify-form button:hover {
+  background: var(--button-primary-hover);
+}
+
+.nav-cta:focus-visible,
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.notify-form button:focus-visible {
+  outline: 2px solid var(--button-border);
+  outline-offset: 3px;
+}
+
+.nav-cta:active,
+.primary-button:active,
+.secondary-button:active,
+.notify-form button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 var(--button-border);
+}
+
+.primary-button:active,
+.notify-form button:active {
+  background: var(--button-primary-pressed);
+}
+
+.nav-cta:active,
+.secondary-button:active {
+  background: var(--button-secondary-pressed);
+}
+
+.notify-form button:disabled {
+  border-color: var(--button-disabled-border);
+  background: var(--button-disabled);
+  box-shadow: 0 2px 0 var(--button-disabled-border);
+  color: rgba(113, 113, 136, 0.5);
+  cursor: not-allowed;
 }
 
 .hero-notes {
@@ -1158,7 +1218,6 @@ h3 {
 }
 
 .notify-form button {
-  border: 0;
   cursor: pointer;
 }
 
