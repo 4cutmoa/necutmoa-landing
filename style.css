@@ -602,8 +602,7 @@ h3 {
 
 .intro-grid article,
 .plan-card,
-.notify-paper,
-.screen-gallery figure {
+.notify-paper {
   border: 1px solid rgba(178, 190, 207, 0.72);
   background: rgba(255,255,255,0.72);
   box-shadow: 0 18px 42px rgba(80, 98, 124, 0.09);
@@ -680,33 +679,38 @@ h3 {
 .screen-gallery figure {
   position: relative;
   display: flex;
-  min-height: 690px;
+  min-height: 0;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  padding: 22px 18px 24px;
-  border-radius: 8px;
-  overflow: hidden;
+  padding: 0 0 24px;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
 }
 
 .screen-shot {
   display: block;
   width: auto;
-  max-width: 100%;
-  height: 540px;
+  max-width: min(100%, 360px);
+  height: 620px;
   aspect-ratio: auto;
   object-fit: contain;
-  object-position: top center;
+  object-position: center;
   border: 0;
   border-radius: 0;
   background: transparent;
-  box-shadow: 0 18px 34px rgba(35, 48, 70, 0.12);
+  box-shadow: none;
+  filter: none;
 }
 
 .map-shot {
-  width: min(100%, 400px);
-  height: 540px;
+  width: auto;
+  max-width: min(100%, 360px);
+  height: 620px;
   object-fit: contain;
   object-position: center;
   margin: 0;
