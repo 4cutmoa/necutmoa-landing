@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Zen Serif";
+  src:
+    url("assets/fonts/ZEN-SERIF-TTF-Regular.ttf") format("truetype"),
+    url("assets/fonts/ZEN-SERIF-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #e8f2fc;
   --bg-soft: #f7fbff;
@@ -19,8 +29,8 @@
   --button-disabled-border: #a8a9b2;
   --shadow: 0 24px 60px rgba(58, 75, 100, 0.18);
   --soft-shadow: 0 16px 30px rgba(41, 55, 76, 0.13);
-  --display-font: "Gowun Batang", "Batang", "Times New Roman", serif;
-  --body-font: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --display-font: "Zen Serif", "Noto Serif KR", "Batang", "Times New Roman", serif;
+  --body-font: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
 }
 
 * {

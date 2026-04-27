@@ -17,7 +17,9 @@ const mimeTypes = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".webp": "image/webp",
-  ".svg": "image/svg+xml"
+  ".svg": "image/svg+xml",
+  ".ttf": "font/ttf",
+  ".otf": "font/otf"
 };
 
 const corsHeaders = {
