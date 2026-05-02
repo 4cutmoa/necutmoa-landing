@@ -13,9 +13,14 @@ module.exports = async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(405).end();
 
-  const { email: rawEmail, page, createdAt } = req.body || {};
-  const email = String(rawEmail || "").trim().toLowerCase();
+  // body 파싱 (Vercel은 자동 파싱 안 될 수 있음)
+  let payload = req.body;
+  if (typeof payload === "string") {
+    try { payload = JSON.parse(payload); } catch { payload = {}; }
+  }
+  payload = payload || {};
 
+  const email = String(payload.email || "").trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: "Invalid email" });
   }
@@ -31,14 +36,14 @@ module.exports = async function handler(req, res) {
   if (existing) {
     await supabase
       .from("leads")
-      .update({ updated_at: now, count: existing.count + 1, page: page || "" })
+      .update({ updated_at: now, count: existing.count + 1, page: payload.page || "" })
       .eq("email", email);
   } else {
     await supabase.from("leads").insert({
       email,
-      page: page || "",
+      page: payload.page || "",
       user_agent: req.headers["user-agent"] || "",
-      created_at: createdAt || now,
+      created_at: payload.createdAt || now,
       updated_at: now,
       count: 1,
     });
