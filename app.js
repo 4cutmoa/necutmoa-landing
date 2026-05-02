@@ -1,6 +1,18 @@
 const form = document.querySelector(".notify-form");
 const message = document.querySelector(".form-message");
+const waitingCount = document.querySelector(".waiting-count");
 const apiBase = location.protocol === "file:" ? "http://localhost:4173" : "";
+
+function updateCount(count) {
+  if (waitingCount && count > 0) {
+    waitingCount.textContent = `현재 ${count}명이 출시를 기다리고 있어요.`;
+  }
+}
+
+fetch(`${apiBase}/api/leads`)
+  .then(r => r.json())
+  .then(data => updateCount(Array.isArray(data) ? data.length : 0))
+  .catch(() => {});
 
 const showMessage = (text, isError = false) => {
   if (!message) return;
@@ -44,7 +56,8 @@ if (form && message) {
       }
 
       const result = await response.json();
-      showMessage(`출시 알림이 등록됐어요! 현재 ${result.count}명이 기다리고 있어요.`);
+      updateCount(result.count);
+      showMessage(`출시 알림이 등록됐어요!`);
       form.reset();
     } catch (error) {
       showMessage("잠시 후 다시 시도해주세요.", true);
