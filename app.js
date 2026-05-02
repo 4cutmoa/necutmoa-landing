@@ -44,12 +44,10 @@ if (form && message) {
       }
 
       const result = await response.json();
-      showMessage(`${email} 주소가 출시 알림 리스트에 저장됐습니다. 현재 ${result.count}명이 기다리고 있어요.`);
+      showMessage(`출시 알림이 등록됐어요! 현재 ${result.count}명이 기다리고 있어요.`);
       form.reset();
     } catch (error) {
-      saveLeadLocally(lead);
-      showMessage(`${email} 주소를 이 브라우저에 임시 저장했습니다. 서버를 켜면 data/leads.json에 누적됩니다.`);
-      form.reset();
+      showMessage("잠시 후 다시 시도해주세요.", true);
     }
   });
 }
