@@ -771,9 +771,9 @@ h3 {
   min-height: 430px;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.34);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .mockup-panel.map-panel {
@@ -1076,7 +1076,7 @@ h3 {
 
 .plan-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
