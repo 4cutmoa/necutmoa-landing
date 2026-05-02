@@ -1,3 +1,17 @@
 {
-  "version": 2
+  "version": 2,
+  "builds": [
+    { "src": "api/notify.js", "use": "@vercel/node" },
+    { "src": "api/leads.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "style.css", "use": "@vercel/static" },
+    { "src": "app.js", "use": "@vercel/static" },
+    { "src": "assets/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/notify", "dest": "/api/notify.js" },
+    { "src": "/api/leads", "dest": "/api/leads.js" },
+    { "src": "/(.*\\.(css|js|gif|png|jpg|svg|ttf|otf|webp))", "dest": "/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
