@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/notify", "destination": "/api/notify" },
+    { "source": "/api/leads", "destination": "/api/leads" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
