@@ -1,6 +1,11 @@
 const form = document.querySelector(".notify-form");
 const message = document.querySelector(".form-message");
-const apiBase = location.protocol === "file:" ? "http://localhost:4173" : "";
+const NOTIFY_URL = location.protocol === "file:"
+  ? "http://localhost:4173/api/notify"
+  : "https://p2u2akpnylfnj4rlgzidt2qgc40vcumt.lambda-url.us-east-1.on.aws/";
+const LEADS_URL = location.protocol === "file:"
+  ? "http://localhost:4173/api/leads"
+  : "https://frzrwuzky2kutchhjo2txs2xjq0egejy.lambda-url.us-east-1.on.aws/";
 
 function updateCount(count) {
   if (message && count > 0) {
@@ -8,7 +13,7 @@ function updateCount(count) {
   }
 }
 
-fetch(`${apiBase}/api/leads`)
+fetch(LEADS_URL)
   .then(r => r.json())
   .then(data => updateCount(Array.isArray(data) ? data.length : 0))
   .catch(() => {});
@@ -44,7 +49,7 @@ if (form && message) {
     };
 
     try {
-      const response = await fetch(`${apiBase}/api/notify`, {
+      const response = await fetch(NOTIFY_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(lead)
