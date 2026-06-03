@@ -1170,11 +1170,12 @@ h3 {
 }
 
 .waiting-count {
-  margin: 0 0 8px;
+  display: block;
+  min-height: 22px;
+  margin-top: 12px;
   color: var(--blue-strong);
-  font-size: 15px;
-  font-weight: 700;
-  min-height: 24px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .notify-form {
