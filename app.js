@@ -68,6 +68,35 @@ if (form && message) {
   });
 }
 
+document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+  const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+  if (!trigger) return;
+
+  const closeDropdown = () => {
+    dropdown.classList.remove("is-open");
+    trigger.setAttribute("aria-expanded", "false");
+  };
+
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = dropdown.classList.toggle("is-open");
+    trigger.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  dropdown.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDropdown();
+      trigger.focus();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+      closeDropdown();
+    }
+  });
+});
+
 document.querySelectorAll("img[data-fallback]").forEach((image) => {
   image.addEventListener("error", () => {
     image.classList.add("is-missing");
