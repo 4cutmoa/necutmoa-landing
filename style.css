@@ -1526,31 +1526,13 @@ h3 {
 
 .modal-body {
   flex: 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
-.modal-body iframe {
-  flex: 1;
-  width: 100%;
-  border: none;
-  min-height: 480px;
-}
-
-.modal-fallback-link {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.82rem;
-  color: var(--blue-strong);
-  text-decoration: none;
-  border-top: 1px solid var(--line);
-  flex-shrink: 0;
-}
-
-.modal-fallback-link:hover {
-  text-decoration: underline;
+.modal-content {
+  padding: 24px 28px 32px;
+  max-width: none;
 }
 
 @media (max-width: 940px) {
@@ -1768,7 +1750,7 @@ h3 {
     gap: 12px;
   }
 
-  .modal-body iframe {
-    min-height: 360px;
+  .modal-content {
+    padding: 20px 18px 28px;
   }
 }
