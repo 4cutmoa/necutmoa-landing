@@ -193,7 +193,7 @@
         </article>
         <article class="plan-card">
           <h3>기억모아</h3>
-          <strong>3,900원</strong>
+          <strong>2,900원</strong>
           <p>순간의 기록들을 기억으로 남기고 싶은 당신을 위한 선택</p>
           <ul>
             <li>사진 50장</li>
@@ -231,9 +231,69 @@
   </main>
 
   <footer class="site-footer">
-    <span>네컷모아</span>
-    <p>사진으로 남기는 추억 앨범</p>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <strong class="footer-brand-name">네컷모아</strong>
+          <p>사진으로 남기는 추억 앨범</p>
+        </div>
+        <div class="footer-meta">
+          <p>상호명: 행복한 지구 &nbsp;·&nbsp; 제공 서비스: 4cutmoa</p>
+          <p>contact: <a href="mailto:hope@4cutmoa.cloud">hope@4cutmoa.cloud</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 행복한 지구. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="법적 정보">
+          <button class="legal-btn" data-modal="terms">이용약관</button>
+          <button class="legal-btn" data-modal="privacy">개인정보처리방침</button>
+          <button class="legal-btn" data-modal="delete">계정 삭제 안내</button>
+        </nav>
+      </div>
+    </div>
   </footer>
+
+  <!-- 모달: 이용약관 -->
+  <div class="modal-overlay" id="modal-terms" hidden aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-terms-title">
+      <div class="modal-header">
+        <h2 id="modal-terms-title">이용약관</h2>
+        <button class="modal-close" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://app.notion.com/p/388ef00151508021a623d329492a2af9" title="이용약관" loading="lazy"></iframe>
+        <a class="modal-fallback-link" href="https://app.notion.com/p/388ef00151508021a623d329492a2af9?source=copy_link" target="_blank" rel="noopener noreferrer">페이지가 보이지 않으면 여기서 열기 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달: 개인정보처리방침 -->
+  <div class="modal-overlay" id="modal-privacy" hidden aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-privacy-title">
+      <div class="modal-header">
+        <h2 id="modal-privacy-title">개인정보처리방침</h2>
+        <button class="modal-close" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://app.notion.com/p/388ef001515080bd97cdeb56ccd8fdce" title="개인정보처리방침" loading="lazy"></iframe>
+        <a class="modal-fallback-link" href="https://app.notion.com/p/388ef001515080bd97cdeb56ccd8fdce?source=copy_link" target="_blank" rel="noopener noreferrer">페이지가 보이지 않으면 여기서 열기 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달: 계정 삭제 안내 -->
+  <div class="modal-overlay" id="modal-delete" hidden aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-delete-title">
+      <div class="modal-header">
+        <h2 id="modal-delete-title">계정 삭제 안내</h2>
+        <button class="modal-close" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://app.notion.com/p/38aef001515080d3a221e8ab958a66ee" title="계정 삭제 안내" loading="lazy"></iframe>
+        <a class="modal-fallback-link" href="https://app.notion.com/p/38aef001515080d3a221e8ab958a66ee?source=copy_link" target="_blank" rel="noopener noreferrer">페이지가 보이지 않으면 여기서 열기 →</a>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

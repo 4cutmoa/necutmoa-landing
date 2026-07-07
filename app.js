@@ -97,6 +97,38 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   });
 });
 
+// 모달
+const openModal = (id) => {
+  const overlay = document.getElementById(`modal-${id}`);
+  if (!overlay) return;
+  overlay.hidden = false;
+  overlay.removeAttribute("aria-hidden");
+  document.body.style.overflow = "hidden";
+  overlay.querySelector(".modal-close")?.focus();
+};
+
+const closeModal = (overlay) => {
+  overlay.hidden = true;
+  overlay.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+};
+
+document.querySelectorAll(".legal-btn").forEach((btn) => {
+  btn.addEventListener("click", () => openModal(btn.dataset.modal));
+});
+
+document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal(overlay);
+  });
+  overlay.querySelector(".modal-close")?.addEventListener("click", () => closeModal(overlay));
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  document.querySelectorAll(".modal-overlay:not([hidden])").forEach(closeModal);
+});
+
 document.querySelectorAll("img[data-fallback]").forEach((image) => {
   image.addEventListener("error", () => {
     image.classList.add("is-missing");
