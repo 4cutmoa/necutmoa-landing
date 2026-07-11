@@ -8,7 +8,15 @@ const supabase = createClient(
 exports.handler = async function (event) {
   const method = event.httpMethod || event.requestContext?.http?.method || "GET";
 
-  if (method !== "GET") return { statusCode: 405, body: "" };
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Content-Type": "application/json",
+  };
+
+  if (method === "OPTIONS") return { statusCode: 204, headers, body: "" };
+  if (method !== "GET") return { statusCode: 405, headers, body: "" };
 
   const { data } = await supabase
     .from("leads")
@@ -17,7 +25,7 @@ exports.handler = async function (event) {
 
   return {
     statusCode: 200,
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify(data),
   };
 };

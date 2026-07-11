@@ -3,20 +3,6 @@ const message = document.querySelector(".form-message");
 const NOTIFY_URL = location.protocol === "file:"
   ? "http://localhost:4173/api/notify"
   : "https://p2u2akpnylfnj4rlgzidt2qgc40vcumt.lambda-url.us-east-1.on.aws/";
-const LEADS_URL = location.protocol === "file:"
-  ? "http://localhost:4173/api/leads"
-  : "https://frzrwuzky2kutchhjo2txs2xjq0egejy.lambda-url.us-east-1.on.aws/";
-
-function updateCount(count) {
-  if (message && count > 0) {
-    message.textContent = `현재 ${count}명이 출시를 기다리고 있어요.`;
-  }
-}
-
-fetch(LEADS_URL)
-  .then(r => r.json())
-  .then(data => updateCount(Array.isArray(data) ? data.length : 0))
-  .catch(() => {});
 
 const showMessage = (text, isError = false) => {
   if (!message) return;
