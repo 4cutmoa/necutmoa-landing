@@ -1354,8 +1354,6 @@ h3 {
 }
 
 .legal-body {
-  max-width: 760px;
-  margin: 0 auto;
   color: var(--ink);
 }
 
