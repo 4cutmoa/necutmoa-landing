@@ -54,6 +54,29 @@ if (form && message) {
   });
 }
 
+// 안드로이드 출시 준비중 팝업
+let toastTimer;
+const showToast = (text) => {
+  let toast = document.querySelector(".toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = text;
+  toast.classList.add("is-visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2400);
+};
+
+document.querySelectorAll(".store-badge-android").forEach((badge) => {
+  badge.addEventListener("click", (event) => {
+    event.preventDefault();
+    showToast("Google Play 버전은 출시 준비중입니다.");
+  });
+});
+
 document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   const trigger = dropdown.querySelector(".nav-dropdown-trigger");
   if (!trigger) return;
