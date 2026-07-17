@@ -11,6 +11,7 @@ frontend:
       - style.css
       - app.js
       - favicon.png
+      - app-ads.txt
       - "assets/**/*"
       - "terms/**/*"
       - "privacy/**/*"
