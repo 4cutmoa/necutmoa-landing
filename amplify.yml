@@ -13,9 +13,6 @@ frontend:
       - favicon.png
       - app-ads.txt
       - "assets/**/*"
-      - "terms/**/*"
-      - "privacy/**/*"
-      - "delete-account/**/*"
-      - "location-terms/**/*"
+      - "pages/**/*"
   cache:
     paths: []

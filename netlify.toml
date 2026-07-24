@@ -10,3 +10,23 @@
   from = "/api/leads"
   to = "/.netlify/functions/leads"
   status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/pages/privacy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/pages/terms/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/location-terms"
+  to = "/pages/location-terms/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/delete-account"
+  to = "/pages/delete-account/index.html"
+  status = 200

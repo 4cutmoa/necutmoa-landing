@@ -1,3 +1,4 @@
+require("dotenv").config();
 const http = require("node:http");
 const fs = require("node:fs/promises");
 const path = require("node:path");
@@ -84,10 +85,22 @@ function readBody(request) {
   });
 }
 
+const legacyPageRoutes = {
+  "/privacy": "/pages/privacy",
+  "/terms": "/pages/terms",
+  "/location-terms": "/pages/location-terms",
+  "/delete-account": "/pages/delete-account"
+};
+
 async function serveStatic(request, response) {
   const url = new URL(request.url, `http://${request.headers.host}`);
-  const requestedPath = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
-  const filePath = path.normalize(path.join(root, requestedPath));
+  let pathname = url.pathname === "/" ? "/index.html" : url.pathname;
+  const trimmedPathname = pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  if (legacyPageRoutes[trimmedPathname]) {
+    pathname = legacyPageRoutes[trimmedPathname];
+  }
+  const requestedPath = decodeURIComponent(pathname);
+  let filePath = path.normalize(path.join(root, requestedPath));
 
   if (!filePath.startsWith(root)) {
     response.writeHead(403);
@@ -96,6 +109,10 @@ async function serveStatic(request, response) {
   }
 
   try {
+    const stat = await fs.stat(filePath).catch(() => null);
+    if (stat && stat.isDirectory()) {
+      filePath = path.join(filePath, "index.html");
+    }
     const content = await fs.readFile(filePath);
     const ext = path.extname(filePath).toLowerCase();
     response.writeHead(200, { "Content-Type": mimeTypes[ext] || "application/octet-stream" });
