@@ -85,21 +85,9 @@ function readBody(request) {
   });
 }
 
-const legacyPageRoutes = {
-  "/privacy": "/pages/privacy",
-  "/terms": "/pages/terms",
-  "/location-terms": "/pages/location-terms",
-  "/delete-account": "/pages/delete-account"
-};
-
 async function serveStatic(request, response) {
   const url = new URL(request.url, `http://${request.headers.host}`);
-  let pathname = url.pathname === "/" ? "/index.html" : url.pathname;
-  const trimmedPathname = pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
-  if (legacyPageRoutes[trimmedPathname]) {
-    pathname = legacyPageRoutes[trimmedPathname];
-  }
-  const requestedPath = decodeURIComponent(pathname);
+  const requestedPath = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
   let filePath = path.normalize(path.join(root, requestedPath));
 
   if (!filePath.startsWith(root)) {

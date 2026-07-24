@@ -1,11 +1,5 @@
 {
   "buildCommand": null,
   "outputDirectory": ".",
-  "framework": null,
-  "rewrites": [
-    { "source": "/privacy", "destination": "/pages/privacy/index.html" },
-    { "source": "/terms", "destination": "/pages/terms/index.html" },
-    { "source": "/location-terms", "destination": "/pages/location-terms/index.html" },
-    { "source": "/delete-account", "destination": "/pages/delete-account/index.html" }
-  ]
+  "framework": null
 }
