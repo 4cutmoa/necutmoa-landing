@@ -1,3 +1,4 @@
+require("dotenv").config();
 const http = require("node:http");
 const fs = require("node:fs/promises");
 const path = require("node:path");
@@ -87,7 +88,7 @@ function readBody(request) {
 async function serveStatic(request, response) {
   const url = new URL(request.url, `http://${request.headers.host}`);
   const requestedPath = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
-  const filePath = path.normalize(path.join(root, requestedPath));
+  let filePath = path.normalize(path.join(root, requestedPath));
 
   if (!filePath.startsWith(root)) {
     response.writeHead(403);
@@ -96,6 +97,10 @@ async function serveStatic(request, response) {
   }
 
   try {
+    const stat = await fs.stat(filePath).catch(() => null);
+    if (stat && stat.isDirectory()) {
+      filePath = path.join(filePath, "index.html");
+    }
     const content = await fs.readFile(filePath);
     const ext = path.extname(filePath).toLowerCase();
     response.writeHead(200, { "Content-Type": mimeTypes[ext] || "application/octet-stream" });
